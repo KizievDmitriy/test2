@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 700;
+    color: gray;
+}
+.logoContainer{
+    text-transform: uppercase;
+    font-size: 2em;
+    padding: 10px;
+}
+.today{
+    text-transform: uppercase;
+    color: gray;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: inherit;
+    font-size: 1.2em;
+    margin-left: 20px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    &:hover{
+        color: rgb(29, 175, 78);
+    }
+    &:active{
+        background-color: rgb(29, 175, 78);
+        color: #fff;
+    }
+}
+.chevron{
+    color: gray;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.2em;
+    &:hover {
+            color: rgb(29, 61, 175);
+        }
+}

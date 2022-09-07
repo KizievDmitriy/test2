@@ -1,16 +1,24 @@
+import React from 'react';
+import { useState } from 'react';
+import {getMonth} from '../utils/ulils'
+import s from './App.module.scss'
+import Header from './Header/Header';
+import Month from './Month/Month';
+import SideBar from './SideBar/SideBar';
+
 export const App = () => {
+  console.dir(getMonth());
+  const [currentMonth, setCurrentMonth] = useState(getMonth());
+  
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+      <React.Fragment>
+        <div className={s.container}>
+        <Header />
+        <div className={s.containerMain}>
+          <SideBar/>
+          <Month month={currentMonth} />
+        </div>
+        </div>
+      </React.Fragment>
   );
 };
