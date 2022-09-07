@@ -28,9 +28,10 @@ export default function Header() {
     <div className={s.container}>
         <h1 className={s.logoContainer}><FaCalendarCheck /> Calendar</h1>
         <button type='button' className={s.today} onClick={handleReset}>Today</button>
+        <div>
         <h2 className={s.currenMonthHeader}>{dayjs(new Date(dayjs().year(), monthIndex)).format(
           "MMMM YYYY"
-        )}</h2>
+        )}</h2></div>
         <button type='button' className={s.chevron} onClick={handlePrevMonth}><BsChevronLeft /></button>
         <button type='button' className={s.chevron} onClick={handleNextMonth}><BsChevronRight /></button>
     </div>
