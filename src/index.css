@@ -74,15 +74,16 @@ article>*+* {
   margin-top: 1em;
 }
 
-/* Наследуем шрифты для инпутов и кнопок */
+/* Наследуем шрифты для инпутов  */
 input,
-button,
 textarea,
 select {
   font: inherit;
 }
 button{
   border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
 @media (prefers-reduced-motion: reduce) {
