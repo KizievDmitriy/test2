@@ -43,8 +43,8 @@ export default function EventModal() {
             <button className={s.closeBtn} onClick={() => setShowEventModal(false)}><GrClose/></button>
             <form>
               <div className={s.daySelected}>
-              <h2 >{daySelected.format("MM.DD.YYYY")}</h2>
-              <p>Created at: {dayjs().format("H:m")}</p>
+                <h2 >{daySelected.format("MM.DD.YYYY")}</h2>
+                {selectedEvent !== null && (<p>Created at: {dayjs().format("H:m")}</p>)}
               </div>
               <input
               type="text"
