@@ -9,10 +9,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 /* Указываем box sizing */
 *,
 *::before,
@@ -52,20 +48,10 @@ body {
   line-height: 1.5;
 }
 
-
-
-
-
-
-
-
-
-/* Наследуем шрифты для инпутов  */
-input{
+input,textarea{
   font: inherit;
   outline: none;
   border: none;
-  /* border-bottom: 1px solid gray; */
 }
 button{
   border: none;

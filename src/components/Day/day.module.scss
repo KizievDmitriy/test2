@@ -18,6 +18,7 @@
 .currentDay{
     font-weight: bold;
     padding: 5px 8px;
+    margin-bottom: 5px;
     border-radius: 50%;
     background-color: rgb(0, 102, 255);
     color: rgb(235, 229, 229);
@@ -30,5 +31,8 @@
 .event{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+    border-radius: 4px;
+    background-color: rgb(0, 89, 253);
+    color: #fff;
 }

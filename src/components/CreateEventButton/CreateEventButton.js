@@ -5,7 +5,7 @@ import s from './createEventButton.module.scss'
 
 
 export default function CreateEventButton() {
-    const { setShowEventModal } = useContext(GlobalContext);
+  const { setShowEventModal } = useContext(GlobalContext);
 
   return (
       <button className={s.button} onClick={() => setShowEventModal(true)}>

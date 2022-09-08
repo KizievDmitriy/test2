@@ -1,6 +1,8 @@
 import GlobalContext from 'contex/GlobalContext';
 import React, { useContext, useState } from 'react'
 import { GrClose } from 'react-icons/gr';
+import { AiFillDelete } from 'react-icons/ai';
+import dayjs from 'dayjs';
 import s from './eventModal.module.scss';
 
 export default function EventModal() {
@@ -8,11 +10,17 @@ export default function EventModal() {
     setShowEventModal,
     daySelected,
     dispatchCalEvent,
-    selectedEvent, } = useContext(GlobalContext);
-  const [title, setTitle] = useState();
-  const [description, setDescription] = useState();
+    selectedEvent,
+  } = useContext(GlobalContext);
 
-   function handleSubmit(e) {
+  const [title, setTitle] = useState(
+    selectedEvent ? selectedEvent.title : ""
+  );
+  const [description, setDescription] = useState(
+    selectedEvent ? selectedEvent.description : ""
+  );
+ 
+  function handleSubmit(e) {
     e.preventDefault();
     const calendarEvent = {
       title,
@@ -28,13 +36,16 @@ export default function EventModal() {
 
     setShowEventModal(false);
   }
-
     return (
         <div className={s.fixedOverlay}>
         <div className={s.container}>
           <div className={s.formContainer}>
             <button className={s.closeBtn} onClick={() => setShowEventModal(false)}><GrClose/></button>
             <form>
+              <div className={s.daySelected}>
+              <h2 >{daySelected.format("MM.DD.YYYY")}</h2>
+              <p>Created at: {dayjs().format("H:m")}</p>
+              </div>
               <input
               type="text"
               name="title"
@@ -42,20 +53,32 @@ export default function EventModal() {
               value={title}
               required
               className={s.input}
-              onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => setTitle(e.target.value)}
               />
-              <p className={s.daySelected}>{daySelected.format("dddd , MMMM DD")}</p>
-              <input
+              <textarea
               type="text"
               name="description"
               placeholder="Add a description "
               value={description}
               required
               className={s.input}
-              onChange={(e) => setDescription(e.target.value)}
+                onChange={(e) => setDescription(e.target.value)}
               />
-              <button type='submit' className={s.saveBtn} onClick={handleSubmit}>
-                Save</button>
+              <div className={s.footer}>
+                <button type='submit' className={s.saveBtn} onClick={handleSubmit}>
+                  Save
+                </button>
+
+                {selectedEvent && (<div className={s.delIcon}
+                 onClick={() => {
+                  dispatchCalEvent({
+                    type: "delete",
+                    payload: selectedEvent,
+                  });
+                   setShowEventModal(false);
+                }}
+                ><AiFillDelete /></div>)}
+              </div>
             </form>
           </div>
         </div>

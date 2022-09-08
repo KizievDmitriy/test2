@@ -15,7 +15,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 300px;
-    min-height: 400px;
+   
     padding: 20px;
     border-radius: 12px;
     background-color: #fff;
@@ -40,7 +40,7 @@
     }
 }
 .input{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border-bottom: 1px solid gray;
     width: 100%;
     &:focus{
@@ -48,19 +48,54 @@
     }
 }
 .daySelected{
-    font-weight: 600;
+    font-weight: 400;
     font-size: medium;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 .saveBtn{
     font-size: large;
     font-weight: 600;
     padding: 6px 12px;
+    margin-right: auto;
     background-color: gray;
     color: #fff;
     border-radius: 4px;
     transition: background-color 350ms ease-in-out;
     &:hover{
         background-color: blueviolet;
+    }
+}
+.footer{
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+}
+.editIcon{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    color: gray;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 350ms ease-in-out;
+    &:hover{
+    color: green;
+    background-color: rgba(37, 120, 37, 0.398);
+ }
+}
+.delIcon{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    color: gray;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 350ms ease-in-out;
+    &:hover {
+        color: red;
+        background-color: rgba(174, 30, 30, 0.398);
     }
 }
