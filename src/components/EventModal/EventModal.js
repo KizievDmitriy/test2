@@ -4,7 +4,7 @@ import { GrClose } from 'react-icons/gr';
 import s from './eventModal.module.scss';
 
 export default function EventModal() {
-  const { setShowEventModal } = useContext(GlobalContext);
+  const { setShowEventModal, daySelected } = useContext(GlobalContext);
   const [title, setTitle] = useState('')
 
     return (
@@ -21,7 +21,8 @@ export default function EventModal() {
               required
               className={s.input}
               onChange={(e) => setTitle(e.target.value)}
-            />
+              />
+              <p className={s.daySelected}>{daySelected.format("dddd , MMMM DD") }</p>
             </form>
           </div>
         </div>
