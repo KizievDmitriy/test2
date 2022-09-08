@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const GlobalContext = React.createContext({
   monthIndex: 0,
   setMonthIndex: (index) => { },
@@ -8,6 +9,7 @@ const GlobalContext = React.createContext({
   smallCalendarMonth: 0,
   showEventModal: false,
   setShowEventModal: () => {},
+  dispatchCalEvent: ({type, payload}) => {},
 });
 
 export default GlobalContext;
